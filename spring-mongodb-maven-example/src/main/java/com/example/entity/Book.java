@@ -14,7 +14,13 @@ public class Book {
 
 	private String title;
 	
+	private String author;
+	
+	private Integer price;
+	
 	private String description;
+	
+	private String imageUrl;
 
 	public Book() {
 	}
@@ -46,6 +52,30 @@ public class Book {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
+	public Integer getPrice() {
+		return price;
+	}
+
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 
 	@Override
