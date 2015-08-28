@@ -14,4 +14,6 @@ import com.example.entity.Book;
 public interface BookRepository extends MongoRepository<Book, String>{
 
 	List<Book>	findAll();
+	
+	Book findById(String id);
 }

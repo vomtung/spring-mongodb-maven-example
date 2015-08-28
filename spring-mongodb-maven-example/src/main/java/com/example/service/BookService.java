@@ -11,8 +11,9 @@ import com.example.entity.Book;
  * @author vominhtung
  *
  */
-@Service
 public interface BookService {
 
 	List<Book>	findAll();
+	
+	Book findByIf(String id);
 }

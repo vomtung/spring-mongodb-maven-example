@@ -24,4 +24,10 @@ public class BookServiceImpl implements BookService{
 		return bookRepository.findAll();
 	}
 
+	public Book findByIf(String id) {
+		// TODO Auto-generated method stub
+		return bookRepository.findById(id);
+	}
+
+	
 }

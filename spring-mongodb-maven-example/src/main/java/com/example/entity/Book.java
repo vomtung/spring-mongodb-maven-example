@@ -1,7 +1,11 @@
 package com.example.entity;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 /**
  * 
  * @author vominhtung
@@ -9,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
  */
 @Document(collection = "book")
 public class Book {
+	
 	@Id
 	private String id;
 
@@ -21,6 +26,13 @@ public class Book {
 	private String description;
 	
 	private String imageUrl;
+	
+	private String ISBN;
+	
+	private Integer pages;
+	
+	@DateTimeFormat(iso=ISO.DATE_TIME)
+	private Date dateCreate;
 
 	public Book() {
 	}
@@ -76,6 +88,30 @@ public class Book {
 
 	public void setImageUrl(String imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public String getISBN() {
+		return ISBN;
+	}
+
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+
+	public Integer getPages() {
+		return pages;
+	}
+
+	public void setPages(Integer pages) {
+		this.pages = pages;
+	}
+
+	public Date getDateCreate() {
+		return dateCreate;
+	}
+
+	public void setDateCreate(Date dateCreate) {
+		this.dateCreate = dateCreate;
 	}
 
 	@Override

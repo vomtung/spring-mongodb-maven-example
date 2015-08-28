@@ -14,7 +14,7 @@
 <div id="templatemo_container">
 	<div id="templatemo_menu">
     	<ul>
-            <li><a href="index.html" class="current">Home</a></li>
+            <li><a href="${pageContext.servletContext.contextPath}/index" class="current">Home</a></li>
             <li><a href="subpage.html">Search</a></li>
             <li><a href="subpage.html">Books</a></li>            
             <li><a href="subpage.html">New Releases</a></li>  
@@ -26,8 +26,7 @@
     <div id="templatemo_header">
     	<div id="templatemo_special_offers">
         	<p>
-                <span>25%</span> discounts for
-        purchase over $80
+                <span>25%</span> discounts for purchase over $80
         	</p>
 			<a href="subpage.html" style="margin-left: 50px;">Read more...</a>
         </div>
@@ -49,8 +48,10 @@
         	<div class="templatemo_content_left_section">
             	<h1>Categories</h1>
                 <ul>
-                    <li><a href="subpage.html">Donec accumsan urna</a></li>
-                    <li><a href="subpage.html">Proin vulputate justo</a></li>
+                <c:forEach var="category" items="${categories}">
+                    <li><a href="#">${category.categoryName}</a></li>
+                </c:forEach>
+                    <!-- <li><a href="subpage.html">Proin vulputate justo</a></li>
                     <li><a href="#">In sed risus ac feli</a></li>
                     <li><a href="#">Aliquam tristique dolor</a></li>
                     <li><a href="#">Maece nas metus</a></li>
@@ -58,6 +59,7 @@
                     <li><a href="#">Suspen disse</a></li>
                     <li><a href="#">Maece nas metus</a></li>
                     <li><a href="#">In sed risus ac feli</a></li>
+                    -->
             	</ul>
             </div>
 			<div class="templatemo_content_left_section">
@@ -89,8 +91,8 @@
                 <div class="product_info">
                 	<p>${book.description}</p>
                   <h3>$ ${book.price}</h3>
-                    <div class="buy_now_button"><a href="subpage.html">Buy Now</a></div>
-                    <div class="detail_button"><a href="subpage.html">Detail</a></div>
+                    <div class="buy_now_button"><a href="${pageContext.servletContext.contextPath}/book/detail?id=${book.id}">Buy Now</a></div>
+                    <div class="detail_button"><a href="${pageContext.servletContext.contextPath}/book/detail?id=${book.id}">Detail</a></div>
                 </div>
                 <div class="cleaner">&nbsp;</div>
                </div>
